@@ -109,6 +109,8 @@ Supported Providers
 
 - Stripe (OAuth2)
 
+- SurveyMonkey (OAuth2)
+
 - Tumblr (OAuth)
 
 - Twitch (OAuth2)

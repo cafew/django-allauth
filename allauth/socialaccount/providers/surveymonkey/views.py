@@ -5,7 +5,6 @@ import requests
 from .provider import SurveyMonkey2Provider
 
 
-
 class SurveyMonkey2Adapter(OAuth2Adapter):
     provider_id = SurveyMonkey2Provider.id
     access_token_url = "https://api.surveymonkey.net/oauth/token"
