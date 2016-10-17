@@ -38,9 +38,12 @@ class OAuth2Client(object):
             'client_id': self.consumer_key,
             'redirect_uri': self.callback_url,
             'scope': self.scope,
-            'response_type': 'code',
-            'api_key': self.api_key
+            'response_type': 'code'
         }
+
+        if self.api_key:
+            params['api_key'] = self.api_key
+
         if self.state:
             params['state'] = self.state
         params.update(extra_params)
@@ -78,9 +81,6 @@ class OAuth2Client(object):
             data=data,
             headers=self.headers,
             auth=auth)
-
-        print 'status_code', resp.status_code
-        print 'body', resp.text
 
         access_token = None
         if resp.status_code == 200:
